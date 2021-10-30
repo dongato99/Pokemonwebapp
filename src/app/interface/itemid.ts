@@ -12,7 +12,7 @@ export interface Itemid {
     {
         "default": string
     },
-    "efffect_entries": Array<{
+    "effect_entries": Array<{
         "effect": string
     }>
 }
