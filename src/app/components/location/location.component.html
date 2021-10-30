@@ -1,4 +1,45 @@
 <div class="container">
+    <div class="card">
+        <div class="card-header">
+          <h3>List of Locations🤡</h3>
+        </div>
+        <div class="card-body">
+          <h3>A total of {{location.locations.length}} locations 🏙️</h3>
+          <!--<div *ngIf="resultadoBsk; else elseBlock">-->
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let elemento of location.locations; index as i;">
+                <tr>
+                    <td scope="row">{{i+1}}</td>
+                    <td>{{elemento.name}}</td>
+                </tr>
+            </tbody>
+              </table>
+      </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+
     
 
     <table class="table">
@@ -16,4 +57,4 @@
             </tr>
         </tbody>
     </table>
-    </div>
+    </div> -->

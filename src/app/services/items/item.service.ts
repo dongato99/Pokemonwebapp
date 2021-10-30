@@ -5,12 +5,11 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class BerryService {
-  baseUrl = environment.baseUrl;
+export class ItemService {
 
   constructor(private http:HttpClient) { }
 
-  getBerries(){
-    return this.http.get<any>(this.baseUrl+'/berry?&limit=64');
+  getItems(index:number){
+    return this.http.get<any>(`${environment.baseUrl}/item/${index}`)
   }
 }

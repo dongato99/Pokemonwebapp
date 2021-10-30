@@ -13,6 +13,9 @@ import { MaterialModule } from 'src/shared/material.module';
 import { RegionComponent } from './components/region/region.component';
 import { LocationComponent } from './components/location/location.component';
 import { BerryComponent } from './components/berry/berry.component';
+import { PokeItemComponent } from './components/poke-item/poke-item.component';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 
 @NgModule({
@@ -25,6 +28,9 @@ import { BerryComponent } from './components/berry/berry.component';
     RegionComponent,
     LocationComponent,
     BerryComponent,
+    PokeItemComponent,
+    LogInComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

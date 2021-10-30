@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BerryService } from 'src/app/services/berry/berry.service';
 
 @Component({
   selector: 'app-berry',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BerryComponent implements OnInit {
 
-  constructor() { }
+  data: any = '';
+
+  constructor(private berryservice:BerryService, private router:Router) { }
 
   ngOnInit(): void {
+    this.getBerries()
   }
 
+  getBerries(){
+    this.berryservice.getBerries().subscribe(
+      res => {
+        this.data = res;
+        console.log(this.data);
+      },
+      err =>{
+        console.log(err);
+      }
+    );
+    }
 }
