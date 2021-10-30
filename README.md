@@ -2,10 +2,10 @@
 Proyecto materia waas 
 
 Integrantes: 
--Pedro Euan
--Kirbey Garcia
--José Marcos
--Shirla Santana
+- Pedro Euan
+- Kirbey Garcia
+- José Marcos
+- Shirla Santana
 
 
 [src en master](https://github.com/dongato99/Pokemonwebapp/tree/master)
