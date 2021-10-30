@@ -1,0 +1,18 @@
+<div class="container">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Generación</th>
+            <th>Región</th>
+            <th>{{data.count}}</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let elemento of data.results; index as i;">
+        <tr id = 'a' (click) = "getRow(i+1)">
+            <td scope="row">{{i+1}}</td>
+            <td>{{elemento.name}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+

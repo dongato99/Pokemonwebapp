@@ -1,0 +1,19 @@
+<div class="container">
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>{{location.locations.length}}</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let elemento of location.locations; index as i;">
+            <tr>
+                <td scope="row">{{i+1}}</td>
+                <td>{{elemento.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

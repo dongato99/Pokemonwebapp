@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{pokemonImg}}" class="img-fluid rounded-start" alt="Pokemon">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{pokemon.name}}</h5>
+              <p class="card-text">No. {{pokemon.id}}</p>
+              <p class="card-text">Height: {{pokemon.height}}0 cm</p>
+              <p class="card-text">Weight: {{pokemon.weight}} g</p>
+              <div class="chip">
+                {{pokemon.types[0].type.name}}
+              </div>
+              <div *ngIf="pokemon.types.length > 1" class="chip">
+                {{pokemon.types[1].type.name}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
