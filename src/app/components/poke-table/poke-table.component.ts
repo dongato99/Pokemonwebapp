@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 
 import { Pokemonid } from 'src/app/interface/pokemonid';
-import { PokemonService } from 'src/app/services/pokemon.service';
+import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 
 
 
@@ -44,7 +44,6 @@ export class PokeTableComponent implements OnInit {
           this.data.push(pokemonData);
           this.dataSource = new MatTableDataSource<any>(this.data);
           this.dataSource.paginator = this.paginator;
-          console.log(res);
         },
         err =>{
           console.log(err);

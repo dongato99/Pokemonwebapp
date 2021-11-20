@@ -15,7 +15,6 @@ export class AppComponent {
         if (event['url'] == '/login') {
           this.mostrarHead = false;
         } else {
-          // console.log("NU")
           this.mostrarHead = true;
         }
       }

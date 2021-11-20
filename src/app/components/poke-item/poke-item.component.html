@@ -8,25 +8,25 @@
         <table mat-table [dataSource]="dataSource">
       
           <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef class="text-center data"> #</th>
-            <td mat-cell *matCellDef="let row"> {{row.position}} </td>
+            <th mat-header-cell *matHeaderCellDef class="text-center data"> # </th>
+            <td mat-cell *matCellDef="let row"> {{row.id}} </td>
           </ng-container>
       
           <ng-container matColumnDef="image">
             <th mat-header-cell *matHeaderCellDef class="text-center icon"> Icon </th>
             <td mat-cell *matCellDef="let row" > 
-                <img src="{{row.image}}" alt="pokemon" width="50" height="50">    
+                <img src="{{row.sprites.default}}" alt="pokemon" width="50" height="50">    
             </td>
           </ng-container>
       
           <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef class="text-center data"> Name </th>
-            <td mat-cell *matCellDef="let row" class="text-center"> {{row.name}} </td>
+            <td mat-cell *matCellDef="let row" class="text-center"> {{row.names[7].name}} </td>
           </ng-container>
 
           <ng-container matColumnDef="description">
             <th mat-header-cell *matHeaderCellDef class="long-text"> Description </th>
-            <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.effect_entries[0].effect}} </td>
           </ng-container>
       
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

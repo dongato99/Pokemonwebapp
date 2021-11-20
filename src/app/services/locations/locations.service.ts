@@ -6,12 +6,12 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class LocationsService {
-  baseUrl = environment.baseUrl;
+  baseUrl = environment.host + environment.apiBaseUrl;
 
   constructor(private http:HttpClient) { }
 
   getLocations(index:number){
     console.log(index);
-    return this.http.get<any>(this.baseUrl+'/region/'+index);
+    return this.http.get<any>(this.baseUrl+'/location/'+index);
   }
 }

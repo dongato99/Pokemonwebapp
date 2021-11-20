@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegionService } from 'src/app/services/region.service';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
   selector: 'app-region',

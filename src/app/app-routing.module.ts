@@ -8,17 +8,42 @@ import { BerryComponent } from './components/berry/berry.component';
 import { PokeItemComponent } from './components/poke-item/poke-item.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ValidateTokenGuard } from './guards/validate-token.guard';
 
 const routes: Routes = [
-  {path: 'home', component: PokeTableComponent},
-  {path: 'pokeDetail/:id', component: PokeDetailComponent},
-  {path: 'regions', component: RegionComponent},
-  {path: 'regions/locations/:index', component: LocationComponent},
-  {path: 'berries', component: BerryComponent},
-  {path: 'items', component: PokeItemComponent},
-  {path: 'login', component:LogInComponent},
-  {path: '',pathMatch: 'full', redirectTo:'home'},
-  {path: '**', component: NotfoundComponent}
+  {
+    path: 'home', component: PokeTableComponent,
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard]
+  },
+  {
+    path: 'pokeDetail/:id', component: PokeDetailComponent,
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard]
+  },
+  {
+    path: 'regions', component: RegionComponent,
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard]
+  },
+  {
+    path: 'regions/locations/:index', component: LocationComponent,
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard]
+  },
+  {
+    path: 'berries', component: BerryComponent,
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard]
+  },
+  {
+    path: 'items', component: PokeItemComponent,
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard]
+  },
+  { path: 'login', component: LogInComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '**', component: NotfoundComponent }
 ];
 
 @NgModule({

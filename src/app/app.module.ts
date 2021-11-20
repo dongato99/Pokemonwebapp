@@ -16,6 +16,7 @@ import { BerryComponent } from './components/berry/berry.component';
 import { PokeItemComponent } from './components/poke-item/poke-item.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,6 +36,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule

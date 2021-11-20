@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class BerryService {
+export class RegionService {
   baseUrl = environment.host + environment.apiBaseUrl;
   private headers= new HttpHeaders()
     .set('content-type', 'application/json')
@@ -15,8 +15,8 @@ export class BerryService {
   constructor( private http        :HttpClient,
                private authService :AuthService) { }
 
-  getBerries(){
-    return this.http.get<any>(this.baseUrl+'/berry?limit=64',
-    {headers: this.headers});
+  getRegions(){
+    return this.http.get<any>(this.baseUrl+'/region',
+      {headers: this.headers});
   }
 }

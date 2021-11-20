@@ -13,9 +13,8 @@ import { ItemService } from 'src/app/services/items/item.service';
 export class PokeItemComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'image', 'name', 'description'];
-  data: any[] = [];
-  dataSource = new MatTableDataSource<any>(this.data);
-  items = [];
+  data: Itemid[] = [];
+  dataSource = new MatTableDataSource<Itemid>(this.data);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
@@ -28,20 +27,14 @@ export class PokeItemComponent implements OnInit {
   }
 
   listItems=()=>{
-    let items
-    for(let i = 1; i <= 151; i++){
+    let item:Itemid;
+    for(let i = 1; i <= 300; i++){
       this.itemService.getItems(i).subscribe(
         res => {
-          items = {
-            position: res.id,
-            image: res.sprites.default,
-            name: res.names[5].name,
-            description:res.effect_entries[0].effect
-          };
-          this.data.push(items);
-          this.dataSource = new MatTableDataSource<any>(this.data);
+          item = res;
+          this.data.push(item);
+          this.dataSource = new MatTableDataSource<Itemid>(this.data);
           this.dataSource.paginator = this.paginator;
-          console.log(res);
         },
         err =>{
           console.log(err);
@@ -57,9 +50,7 @@ export class PokeItemComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-  getRow(row: any){
+  seeItemDetail(row: any){
     this.router.navigateByUrl(`itemDetail/${row.position}`);
   }
-
 }
