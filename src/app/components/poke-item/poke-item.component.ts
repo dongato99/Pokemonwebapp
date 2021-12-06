@@ -4,7 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Itemid } from 'src/app/interface/itemid';
 import { ItemService } from 'src/app/services/items/item.service'; 
-
+/**
+ * Componente de los items
+ */
 @Component({
   selector: 'app-poke-item',
   templateUrl: './poke-item.component.html',
@@ -25,7 +27,9 @@ export class PokeItemComponent implements OnInit {
   ngOnInit(): void {
     this.listItems();
   }
-
+/**
+ * Lista de items
+ */
   listItems=()=>{
     let item:Itemid;
     for(let i = 1; i <= 300; i++){
@@ -42,6 +46,10 @@ export class PokeItemComponent implements OnInit {
       );
     }
   }
+  /**
+   * Filtro
+   * @param event Filtro
+   */
   filterResults=(event:Event)=>{
     const filtered = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filtered.trim().toLowerCase();
@@ -50,6 +58,9 @@ export class PokeItemComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+  /**
+   * Detalles de los items
+   */
   seeItemDetail(row: any){
     this.router.navigateByUrl(`itemDetail/${row.position}`);
   }
