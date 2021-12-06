@@ -35,4 +35,25 @@ export class PokemonService {
   removePokemonFromMyTeamPokemons(pokemonId:number) {
     return this.http.delete<TeamMember>(this.baseUrl + '/my-team', { headers: this.headers , body:{"pokemonId":pokemonId}});
   }
+
+  isThereSpace(){
+    let result:boolean;
+    let otherResult:boolean;
+    this.getMyTeamPokemons().subscribe(
+      (response) => {
+        result = response.length <= 5;
+        console.log(result)
+      },(error)=>{
+        console.log(error);
+      },()=>{
+        if(result)
+          otherResult = true
+        else 
+          otherResult = false
+      }
+    );
+    console.log(result!);
+    
+    return otherResult!;
+  }
 }

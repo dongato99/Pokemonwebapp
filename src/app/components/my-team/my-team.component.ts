@@ -9,21 +9,23 @@ import { PokemonService } from '../../services/pokemon/pokemon.service';
 })
 export class MyTeamComponent implements OnInit {
 
-  pokemonTeamMembers: Pokemonid[] = []
+  pokemonTeamMembers: Pokemonid[];
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService) { 
+    this.pokemonTeamMembers = [];
+  }
 
   ngOnInit(): void {
     this.getMyTeam();
   }
 
-  removeFromTeam(id:number) {
+  removeFromTeam(id: number) {
     this.pokemonService.removePokemonFromMyTeamPokemons(id).subscribe(
-      (response)=>{
+      (response) => {
         document.querySelector(`#card-id-${id}`)?.remove();
-        alert(`Se eliminó el pokemon con id:${id} del equipo.`)
-      },(error)=>{
-        alert('Algo salió mal: '+error.status)
+        alert(`Se eliminó el pokemon del equipo.`)
+      }, (error) => {
+        alert('Algo salió mal: ' + error.status)
       }
     )
   }
@@ -34,7 +36,7 @@ export class MyTeamComponent implements OnInit {
         response.forEach((value) => {
           this.getPokemon(value.pokemonId).subscribe(response => {
             this.pokemonTeamMembers.push(response)
-          },error => {
+          }, error => {
             console.log(error);
           });
         })
@@ -42,7 +44,7 @@ export class MyTeamComponent implements OnInit {
     );
   }
 
-  getPokemon(id) {
+  getPokemon(id:number) {
     return this.pokemonService.getPokemons(id);
   }
 }

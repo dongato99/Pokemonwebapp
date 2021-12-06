@@ -15,7 +15,7 @@
         <div class="col-7 text-center">
           <h3 class="card-text">{{pokemon.name | titlecase}}</h3>
           <p class="card-text">No. {{pokemon.id}}</p>
-          <p class="card-text">Height: {{pokemon.height}} ft</p>
+          <p class="card-text">Height: {{pokemon.height/10}} m</p>
           <p class="card-text">Weight: {{pokemon.weight/10}} kg</p>
 
           <span *ngFor="let type of pokemon.types" class="badge rounded-pill bg-primary">
