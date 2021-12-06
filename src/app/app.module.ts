@@ -17,6 +17,7 @@ import { PokeItemComponent } from './components/poke-item/poke-item.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyTeamComponent } from './components/my-team/my-team.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BerryComponent,
     PokeItemComponent,
     LogInComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    MyTeamComponent
   ],
   imports: [
     BrowserModule,

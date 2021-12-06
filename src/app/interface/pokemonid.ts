@@ -11,6 +11,8 @@ export interface Pokemonid {
           "front_default": string,
           "front_shiny": string,
         },
+        "height":number,
+        "weight":number,
         "types": [
           {
             "slot": number,

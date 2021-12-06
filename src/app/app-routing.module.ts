@@ -9,10 +9,16 @@ import { PokeItemComponent } from './components/poke-item/poke-item.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ValidateTokenGuard } from './guards/validate-token.guard';
+import { MyTeamComponent } from './components/my-team/my-team.component';
 
 const routes: Routes = [
   {
     path: 'home', component: PokeTableComponent,
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard]
+  },
+  {
+    path: 'my-team', component: MyTeamComponent,
     canActivate: [ValidateTokenGuard],
     canLoad: [ValidateTokenGuard]
   },

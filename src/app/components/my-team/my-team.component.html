@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="card-group col-12">
+      <div *ngFor="let pokemon of pokemonTeamMembers" id="card-id-{{pokemon.id}}" class="card mt-3 mb-3">
+        <div class="col-12">
+          <img src="{{pokemon.sprites.front_default}}" class="card-img-top img-fluid" alt="Pokemon">
+        </div>
+        <div class="row card-body">
+          <div class="col-8">
+            <h3 class="card-text">{{pokemon.name | titlecase}}</h3>
+            <p class="card-text">No. {{pokemon.id}}</p>
+            <p class="card-text">Height: {{pokemon.height}} ft</p>
+            <p class="card-text">Weight: {{pokemon.weight}} kg</p>
+
+            <span *ngFor="let type of pokemon.types" class="badge rounded-pill bg-primary">
+              {{type.type.name | titlecase}}
+            </span>
+          </div>
+          <div class="col-4">
+            <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeFromTeam(pokemon.id)">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

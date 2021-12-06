@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { tap } from 'rxjs/operators';
 
 import { Pokemonid } from 'src/app/interface/pokemonid';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
@@ -16,7 +17,7 @@ import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 export class PokeTableComponent implements OnInit {
 
 
-  displayedColumns: string[] = ['position', 'image', 'name'];
+  displayedColumns: string[] = ['position', 'image', 'name', 'action'];
   data: any[] = [];
   dataSource = new MatTableDataSource<any>(this.data);
   pokemons = [];
@@ -62,9 +63,19 @@ export class PokeTableComponent implements OnInit {
     }
   }
 
-  getRow(row: any){
-    this.router.navigateByUrl(`pokeDetail/${row.position}`);
+  getRow(id: number){
+    this.router.navigateByUrl(`pokeDetail/${id}`);
   }
 
-
+  addPokemonToTeam(id:number){
+    this.pokeService.addPokemonToMyTeamPokemons(id).subscribe(
+      (response)=>{
+        alert('El resultado: '+response.userId+', '+response.pokemonId+';')
+      },(error)=>{
+        if(error.status == 409){
+          alert('El pokemon ya pertenece a tu equipo')
+        }
+      }
+    )
+  }
 }
