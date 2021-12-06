@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+/**
+ * Componente de not found 
+ */
 @Component({
   selector: 'app-notfound',
   templateUrl: './notfound.component.html',
