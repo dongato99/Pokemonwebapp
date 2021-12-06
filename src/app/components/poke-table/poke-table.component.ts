@@ -8,7 +8,9 @@ import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 import { MyTeamComponent } from '../my-team/my-team.component';
 
 
-
+/**
+ * Componente de los Pokemon
+ */
 @Component({
   selector: 'app-poke-table',
   templateUrl: './poke-table.component.html',
@@ -34,7 +36,9 @@ export class PokeTableComponent implements OnInit {
   ngOnInit(): void {
     this.getPokemons();
   }
-
+/**
+ * Obtener los Pokemon
+ */
   getPokemons() {
     let pokemonData;
     for (let i = 1; i <= 151; i++) {
@@ -56,7 +60,10 @@ export class PokeTableComponent implements OnInit {
     }
 
   }
-
+/**
+ * 
+ * @param event Filtro
+ */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -65,11 +72,17 @@ export class PokeTableComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
+/**
+ * Obtener fila por numero
+ * @param id Numero de fila
+ */
   getRow(id: number) {
     this.router.navigateByUrl(`pokeDetail/${id}`);
   }
-
+/**
+ * Añadir Pokemon al equipo
+ * @param id Numero del Pokemon
+ */
   addPokemonToTeam(id: number) {
     this.pokeService.getMyTeamPokemons().subscribe(
       (response) => {
