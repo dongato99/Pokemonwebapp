@@ -1,3 +1,6 @@
+/**
+ * Interfaz de Pokemon
+ */
 export interface Pokemonid {
         "id": number,
         "name": string,

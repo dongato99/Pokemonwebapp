@@ -1,3 +1,6 @@
+/**
+ * Interfaz de item
+ */
 export interface Itemid {
     "id": number,
     "name": string,
