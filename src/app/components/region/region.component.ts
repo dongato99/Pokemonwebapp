@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegionService } from 'src/app/services/region/region.service';
-
+/**
+ * Componente de Region
+ */
 @Component({
   selector: 'app-region',
   templateUrl: './region.component.html',
@@ -16,7 +18,9 @@ export class RegionComponent implements OnInit {
   ngOnInit(): void {
     this.getRegions()
   }
-
+/**
+ * Obtener las regiones
+ */
   getRegions(){
     this.locationservice.getRegions().subscribe(
       res => {
@@ -28,6 +32,10 @@ export class RegionComponent implements OnInit {
       }
     );
     }
+    /**
+     * Obtener fila
+     * @param index Numero de region
+     */
     getRow(index:number){
       
       this.router.navigateByUrl(`regions/locations/${index}`);
