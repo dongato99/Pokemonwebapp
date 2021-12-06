@@ -4,7 +4,7 @@ Proyecto materia waas
 Integrantes: 
 - Pedro Euan
 - Kirbey Garcia
-- José Marcos
+- José Morales
 - Shirla Santana
 
 
