@@ -61,6 +61,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio de items</p>
+
+            </p>
 
 
 
@@ -118,7 +125,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/services/items/item.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/items/item.service.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -193,14 +200,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/services/items/item.service.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/services/items/item.service.ts:26</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Obtener item por numero</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -211,6 +220,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -225,6 +235,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Numero de item</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -269,7 +283,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/items/item.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/services/items/item.service.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -287,7 +301,9 @@ import { Injectable } from &#x27;@angular/core&#x27;;
 import { AuthService } from &#x27;src/app/auth/services/auth.service&#x27;;
 import { Itemid } from &#x27;src/app/interface/itemid&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
-
+/**
+ * Servicio de items
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
@@ -300,7 +316,11 @@ private headers&#x3D; new HttpHeaders()
 
   constructor(private http        :HttpClient,
               private authService :AuthService) { }
-
+/**
+ * Obtener item por numero
+ * @param index Numero de item
+ * @returns 
+ */
   getItems(index:number){
     return this.http.get&lt;Itemid&gt;(&#x60;${environment.host + environment.apiBaseUrl}/item/${index}&#x60;,
       {headers: this.headers})

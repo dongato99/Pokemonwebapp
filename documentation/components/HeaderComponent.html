@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente Header/navbar</p>
+
+    </p>
 
 
     <p class="comment">
@@ -166,7 +173,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/components/header/header.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/header/header.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -245,14 +252,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/components/header/header.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/components/header/header.component.ts:23</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Redirección a home</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -282,18 +291,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/components/header/header.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/components/header/header.component.ts:30</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Cerrar sesión</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -319,8 +335,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/components/header/header.component.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/components/header/header.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -346,6 +362,9 @@
 import { Router } from &#x27;@angular/router&#x27;;
 import { AuthService } from &#x27;src/app/auth/services/auth.service&#x27;;
 
+/**
+ * Componente Header/navbar
+ */
 @Component({
   selector: &#x27;app-header&#x27;,
   templateUrl: &#x27;./header.component.html&#x27;,
@@ -358,11 +377,16 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+/**
+ * Redirección a home
+ */
   home(){
     this.router.navigateByUrl(&#x27;/home&#x27;);
   }
-
+/**
+ * Cerrar sesión
+ * @returns 
+ */
   logout(){
     return this.authService.logout()
       .subscribe(
@@ -439,7 +463,7 @@ export class HeaderComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ul class="nav justify-content-end bg-dark">    <li class="nav-item">        <a class="nav-link active" [routerLink]="[\'/home\']">List of Pokemon 🦍</a>    </li>    <li class="nav-item">        <a class="nav-link" [routerLink]="[\'/my-team\']">My team</a>    </li>    <li class="nav-item">        <a class="nav-link" [routerLink]="[\'/regions\']">Regions</a>    </li>    <li class="nav-item">        <a class="nav-link" [routerLink]="[\'/items\']">Items</a>    </li>    <li class="nav-item">        <a class="nav-link" [routerLink]="[\'/berries\']">Berries</a>    </li>    <li class="nav-item">        <a class="nav-link" (click)="logout()" href=\'#\'>Log out👋</a>    </li></ul></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BerryComponent', 'selector': 'app-berry'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyTeamComponent', 'selector': 'app-my-team'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'PokeDetailComponent', 'selector': 'app-poke-detail'},{'name': 'PokeItemComponent', 'selector': 'app-poke-item'},{'name': 'PokeTableComponent', 'selector': 'app-poke-table'},{'name': 'RegionComponent', 'selector': 'app-region'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BerryComponent', 'selector': 'app-berry'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyTeamComponent', 'selector': 'app-my-team'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'PokeDetailComponent', 'selector': 'app-poke-detail'},{'name': 'PokeItemComponent', 'selector': 'app-poke-item'},{'name': 'PokeTableComponent', 'selector': 'app-poke-table'},{'name': 'RegionComponent', 'selector': 'app-region'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
 </script>

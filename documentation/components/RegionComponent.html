@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de Region</p>
+
+    </p>
 
 
     <p class="comment">
@@ -180,7 +187,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/region/region.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/region/region.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -259,14 +266,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/components/region/region.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/components/region/region.component.ts:24</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Obtener las regiones</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -296,14 +305,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/components/region/region.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/components/region/region.component.ts:39</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Obtener fila</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -314,6 +325,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -328,6 +340,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Numero de region</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -365,8 +381,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/components/region/region.component.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/components/region/region.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -412,7 +428,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/region/region.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/region/region.component.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -428,7 +444,9 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { RegionService } from &#x27;src/app/services/region/region.service&#x27;;
-
+/**
+ * Componente de Region
+ */
 @Component({
   selector: &#x27;app-region&#x27;,
   templateUrl: &#x27;./region.component.html&#x27;,
@@ -443,7 +461,9 @@ export class RegionComponent implements OnInit {
   ngOnInit(): void {
     this.getRegions()
   }
-
+/**
+ * Obtener las regiones
+ */
   getRegions(){
     this.locationservice.getRegions().subscribe(
       res &#x3D;&gt; {
@@ -455,6 +475,10 @@ export class RegionComponent implements OnInit {
       }
     );
     }
+    /**
+     * Obtener fila
+     * @param index Numero de region
+     */
     getRow(index:number){
       
       this.router.navigateByUrl(&#x60;regions/locations/${index}&#x60;);
@@ -572,7 +596,7 @@ export class RegionComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="container"><div class="card">    <div class="card-header">      <h3>List of Regions🤡</h3>    </div>    <div class="card-body">      <h3>A total of {{data.count}} regions 🏙️</h3>      <!--<div *ngIf="resultadoBsk; else elseBlock">-->      <table class="table table-hover">          <thead>            <tr>              <th scope="col">Generation</th>              <th scope="col">Name</th>            </tr>          </thead>          <tbody *ngFor="let elemento of data.results; index as i;">            <tr id = \'a\' (click) = "getRow(i+1)">                <td scope="row">{{i+1}}</td>                <td>{{elemento.name}}</td>            </tr>          </tbody>          </table>  </div>    </div></div><!-- <div class="container">    <table class="table">        <thead>            <tr>                <th>Generación</th>                <th>Región</th>                <th>{{data.count}}</th>            </tr>        </thead>        <tbody *ngFor="let elemento of data.results; index as i;">            <tr id = \'a\' (click) = "getRow(i+1)">                <td scope="row">{{i+1}}</td>                <td>{{elemento.name}}</td>            </tr>        </tbody>    </table>    </div>     --></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BerryComponent', 'selector': 'app-berry'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyTeamComponent', 'selector': 'app-my-team'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'PokeDetailComponent', 'selector': 'app-poke-detail'},{'name': 'PokeItemComponent', 'selector': 'app-poke-item'},{'name': 'PokeTableComponent', 'selector': 'app-poke-table'},{'name': 'RegionComponent', 'selector': 'app-region'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BerryComponent', 'selector': 'app-berry'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyTeamComponent', 'selector': 'app-my-team'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'PokeDetailComponent', 'selector': 'app-poke-detail'},{'name': 'PokeItemComponent', 'selector': 'app-poke-item'},{'name': 'PokeTableComponent', 'selector': 'app-poke-table'},{'name': 'RegionComponent', 'selector': 'app-region'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RegionComponent'};
 </script>

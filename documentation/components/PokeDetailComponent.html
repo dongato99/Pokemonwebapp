@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de los detalles del Pokemon</p>
+
+    </p>
 
 
     <p class="comment">
@@ -180,7 +187,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/poke-detail/poke-detail.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/poke-detail/poke-detail.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -259,14 +266,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/components/poke-detail/poke-detail.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/components/poke-detail/poke-detail.component.ts:35</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Obtener pokemon por id</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -276,6 +285,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -287,6 +297,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Numero del Pokemon</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -324,8 +338,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/components/poke-detail/poke-detail.component.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/components/poke-detail/poke-detail.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -371,7 +385,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/poke-detail/poke-detail.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/poke-detail/poke-detail.component.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -402,7 +416,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/poke-detail/poke-detail.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/poke-detail/poke-detail.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -418,7 +432,9 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute, ChildActivationStart } from &#x27;@angular/router&#x27;;
 import { PokemonService } from &#x27;src/app/services/pokemon/pokemon.service&#x27;;
-
+/**
+ * Componente de los detalles del Pokemon
+ */
 @Component({
   selector: &#x27;app-poke-detail&#x27;,
   templateUrl: &#x27;./poke-detail.component.html&#x27;,
@@ -443,7 +459,10 @@ export class PokeDetailComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+/**
+ * Obtener pokemon por id
+ * @param id Numero del Pokemon
+ */
   getPokemon(id){
     this.pokemonService.getPokemons(id).subscribe(
       res &#x3D;&gt; {
@@ -546,7 +565,7 @@ img {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="container">    <div class="card mb-3" style="max-width: 540px;">        <div class="row g-0">          <div class="col-md-4">            <img src="{{pokemonImg}}" class="img-fluid rounded-start" alt="Pokemon">          </div>          <div class="col-md-8">            <div class="card-body">              <h5 class="card-title">{{pokemon.name}}</h5>              <p class="card-text">No. {{pokemon.id}}</p>              <p class="card-text">Height: {{pokemon.height}}0 cm</p>              <p class="card-text">Weight: {{pokemon.weight / 10}} Kg</p>              <div class="chip">                {{pokemon.types[0].type.name}}              </div>              <div *ngIf="pokemon.types.length > 1" class="chip">                {{pokemon.types[1].type.name}}              </div>            </div>          </div>        </div>      </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BerryComponent', 'selector': 'app-berry'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyTeamComponent', 'selector': 'app-my-team'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'PokeDetailComponent', 'selector': 'app-poke-detail'},{'name': 'PokeItemComponent', 'selector': 'app-poke-item'},{'name': 'PokeTableComponent', 'selector': 'app-poke-table'},{'name': 'RegionComponent', 'selector': 'app-region'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BerryComponent', 'selector': 'app-berry'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyTeamComponent', 'selector': 'app-my-team'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'PokeDetailComponent', 'selector': 'app-poke-detail'},{'name': 'PokeItemComponent', 'selector': 'app-poke-item'},{'name': 'PokeTableComponent', 'selector': 'app-poke-table'},{'name': 'RegionComponent', 'selector': 'app-region'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PokeDetailComponent'};
 </script>

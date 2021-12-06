@@ -61,6 +61,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio de Berries</p>
+
+            </p>
 
 
 
@@ -121,7 +128,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/berry/berry.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/berry/berry.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -196,18 +203,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/services/berry/berry.service.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/services/berry/berry.service.ts:23</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Obtener Berries</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -237,7 +251,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/berry/berry.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/berry/berry.service.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -265,7 +279,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/berry/berry.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/berry/berry.service.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -282,7 +296,9 @@
 import { Injectable } from &#x27;@angular/core&#x27;;
 import { AuthService } from &#x27;src/app/auth/services/auth.service&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
-
+/**
+ * Servicio de Berries
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
@@ -294,7 +310,10 @@ export class BerryService {
 
   constructor( private http        :HttpClient,
                private authService :AuthService) { }
-
+/**
+ * Obtener Berries
+ * @returns 
+ */
   getBerries(){
     return this.http.get&lt;any&gt;(this.baseUrl+&#x27;/berry?limit&#x3D;64&#x27;,
     {headers: this.headers});
