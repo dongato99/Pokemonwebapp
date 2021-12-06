@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BerryService } from 'src/app/services/berry/berry.service';
 
+/**
+ * Componente de Berries
+ */
 @Component({
   selector: 'app-berry',
   templateUrl: './berry.component.html',
@@ -16,7 +19,9 @@ export class BerryComponent implements OnInit {
   ngOnInit(): void {
     this.getBerries()
   }
-
+/**
+ * Obtener Berries
+ */
   getBerries(){
     this.berryservice.getBerries().subscribe(
       res => {
