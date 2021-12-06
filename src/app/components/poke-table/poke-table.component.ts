@@ -18,7 +18,7 @@ export class PokeTableComponent implements OnInit {
 
 
   displayedColumns: string[] = ['position', 'image', 'name', 'action'];
-  data: any[] = [];
+  data: Pokemonid[] = [];
   dataSource = new MatTableDataSource<any>(this.data);
   pokemons = [];
 
@@ -43,7 +43,7 @@ export class PokeTableComponent implements OnInit {
             name: res.name
           };
           this.data.push(pokemonData);
-          this.dataSource = new MatTableDataSource<any>(this.data);
+          this.dataSource = new MatTableDataSource<Pokemonid>(this.data);
           this.dataSource.paginator = this.paginator;
         },
         err =>{

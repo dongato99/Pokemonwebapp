@@ -1,24 +1,26 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="card-group col-12">
-      <div *ngFor="let pokemon of pokemonTeamMembers" id="card-id-{{pokemon.id}}" class="card mt-3 mb-3">
-        <div class="col-12">
-          <img src="{{pokemon.sprites.front_default}}" class="card-img-top img-fluid" alt="Pokemon">
+<div *ngIf="pokemonTeamMembers.length <= 0" class="card text-center">
+  <h1>No has agregado a ningun pokemon a tu equipo</h1>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4 m-2">
+  <div id="card-id-{{pokemon.id}}" *ngFor="let pokemon of pokemonTeamMembers" class="col">
+    <div class="card">
+      <div class="row card-body">
+        <div class="col-5">
+          <img src="{{pokemon.sprites.front_default}}" class="card-img-top" alt="Pokemon">
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-sm btn-outline-danger"
+              (click)="removeFromTeam(pokemon.id)">Eliminar</button>
+          </div>
         </div>
-        <div class="row card-body">
-          <div class="col-8">
-            <h3 class="card-text">{{pokemon.name | titlecase}}</h3>
-            <p class="card-text">No. {{pokemon.id}}</p>
-            <p class="card-text">Height: {{pokemon.height}} ft</p>
-            <p class="card-text">Weight: {{pokemon.weight}} kg</p>
+        <div class="col-7 text-center">
+          <h3 class="card-text">{{pokemon.name | titlecase}}</h3>
+          <p class="card-text">No. {{pokemon.id}}</p>
+          <p class="card-text">Height: {{pokemon.height}} ft</p>
+          <p class="card-text">Weight: {{pokemon.weight/10}} kg</p>
 
-            <span *ngFor="let type of pokemon.types" class="badge rounded-pill bg-primary">
-              {{type.type.name | titlecase}}
-            </span>
-          </div>
-          <div class="col-4">
-            <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeFromTeam(pokemon.id)">Eliminar</button>
-          </div>
+          <span *ngFor="let type of pokemon.types" class="badge rounded-pill bg-primary">
+            {{type.type.name | titlecase}}
+          </span>
         </div>
       </div>
     </div>
