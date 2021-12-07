@@ -8,6 +8,6 @@ Integrantes:
 - Shirla Santana
 
 
-[src en master](https://github.com/dongato99/Pokemonwebapp/tree/entrega-final)
+[src en entrega-final](https://github.com/dongato99/Pokemonwebapp/tree/entrega-final)
 
 [Diseño mockup](https://marvelapp.com/prototype/2c3ej29g/screen/83055230)
